@@ -38,7 +38,7 @@ impl<S: Hash + Sync + Send + Clone + Default + Reflect + TypePath + FromReflect 
             .add_event::<InputEvent>()
             .add_systems(
                 PreUpdate,
-                update_joystick.before(update_input::<S>).run_if(not(run_if_pc))
+                update_joystick.before(update_input::<S>)
             )
             .add_systems(
                 PreUpdate,
